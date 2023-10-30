@@ -1,0 +1,16 @@
+.homeContainer{
+  .homeSec{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1rem;
+    .docListing{
+      width: 100%;
+    }
+    .docUploading{
+      width: 100%;
+      //border: 1px solid var(--border-default);
+    }
+  }
+}

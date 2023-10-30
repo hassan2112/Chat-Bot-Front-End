@@ -1,0 +1,103 @@
+.chatContainer{
+  padding: 1rem 0 0 0;
+    .chatSec{
+      display: flex;
+      width: 100%;
+      gap: 1rem;
+      //background: #f1f1f1;
+      .chatSessions{
+        flex: 0 0 300px;
+        max-width:300px;
+        ul{
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+          width: 100%;
+          gap: 0.5rem;
+          display: flex;
+          flex-direction: column;
+          li{
+            display: flex;
+            width: 100%;
+            a{
+              display: block;
+              align-items:center;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              border-radius: 5px;
+              padding: 0.8rem;
+              background: #f7f7f7;
+              width: 100%;
+              overflow: hidden;
+              color: var(--text-default);
+            }
+          }
+        }
+      }
+      .chatbox{
+        width: 100%;
+        padding: 0;
+        background: #f7f7f7;
+        border-radius: 5px;
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: calc(100vh - 66px - 2rem - 44px);
+        min-height: 400px;
+        .chatAreaHolder{
+          max-height: calc(100vh - 188px - 2.5rem);
+          overflow:auto;
+          margin-top: auto;
+        }
+        .chatArea{
+          width: 100%;
+          padding: 15px;
+          display:flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          gap: 1rem;
+          .chatAnswer{
+            display:flex;
+            gap: 0.5rem;
+            flex-direction: row-reverse;
+          }
+          .chatQue{
+            display:flex;
+            gap: 0.5rem;
+            i{
+              background: var(--app-theme-secondary);
+            }
+            
+            .chatText{
+              background: #8b8b8b;
+              color: #fff;
+            }
+          }
+          .chatText{
+            background: #d5ebd2;
+            border-radius: 5px;
+            padding: 10px;
+            max-width: 50rem;
+            line-height: 22px;
+          }
+          i{
+            border-radius: 100%;
+            background: var(--app-theme);
+            flex: 0 0 4rem;
+            max-width: 4rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg{
+              fill: var(--white);
+            }
+          }
+        }
+        .chatForm{
+          padding: 1rem;
+          
+        }
+      }
+    }
+}

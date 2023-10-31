@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root{
+    --family-work-sans: 'Work Sans', sans-serif;
+    --weight-100: 100;
+    --weight-200: 200;
+    --weight-300: 300;
+    --weight-400: 400;
+    --weight-500: 600;
+    --weight-600: 600;
+    --weight-700: 700;
+    --weight-800: 800;
+    --weight-900: 900;
+    --app-theme: #5eb91e;
+    --app-theme-secondary: #1a1a1a;
+    --text-default: #1a1a1a;
+    --header-border: #fff;
+    --white: #fff;
+    --header-text: #fff;
+    --footer-text: #fff;
+    --border-default: #dedede;
+
+    
+    --thead-bg: #1a1a1a;
+    --thead-color: #fff;
+    --tbody-color: #1a1a1a;
+}
+html{
+  font-size: 0.875rem;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: var(--family-work-sans);
+  font-size: 1rem;
+  color: var(--text-default);
+  a{
+    text-decoration: none;
+  }
+}
+.p-component {
+  font-family: var(--family-work-sans);
+  font-size: 1em;
+//  color: var(--text-default);
+}
+.container{
+  display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+    @media (min-width: 576px){
+      max-width: 540px;
+    }
+    @media (min-width: 768px){
+      max-width: 720px;
+    }
+    @media (min-width: 992px){
+      max-width: 960px;
+    }
+    @media (min-width: 1200px){
+      max-width: 1140px;
+    }
+    @media (min-width: 1400px){
+      max-width: 1320px;
+    }
+}
+.topBar{
+  display:flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid var(--border-default);
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  h1{
+    font-size: 1.4em;
+    margin: 0 auto 0 0;
+    font-weight: 600;
+  }
+}
+
+.p-datatable{
+  .p-datatable-thead{
+    > tr{
+      > th{
+        background: var(--thead-bg);
+        color: var(--thead-color);
+        font-weight: 500;
+        padding: 8px;
+      }
+    }
+  }
+  .p-datatable-tbody{
+    > tr{
+      > td{
+        color: var(--tbody-color);
+        font-weight: 500;
+        padding: 8px;
+      }
+    }
+  }
+}
+.p-button-label{
+  font-weight: 400;
+}
+
+.fileUploadSec{
+  .p-fileupload{
+    display: flex;
+    max-height: calc(100vh - 170px);
+    flex-direction: column-reverse;
+    .p-fileupload-buttonbar{
+      padding: 0;
+      border: 0;
+      background: none;
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      .p-button{
+        width: 100%;
+        margin: 0;
+      }
+      .p-fileupload-choose:not(.p-disabled):hover{
+        background: var(--app-theme);
+        border-color: 1px solid var(--app-theme);
+      }
+      .p-fileupload-choose:not(.p-disabled):active{
+        background: var(--app-theme);
+        border-color: 1px solid var(--app-theme);
+
+      }
+      .p-fileupload-choose.p-focus{
+        box-shadow: none;
+      }
+      p-button[ng-reflect-disabled="true"]{
+        display: none;
+      }
+      .p-disabled{
+        display: none;
+      }
+    }
+    .p-fileupload-content{
+      height: 100%;
+      min-height: 360px;
+      border-radius: 5px;
+      overflow: auto;
+      padding: 0;
+      border: 0;
+    }
+    .p-fileupload-row{
+      position: relative;
+      background: #f1f1f1;
+      &:nth-child(2n+2){
+        background: #fff;
+      }
+      > div{
+        flex: auto;
+        width: auto;
+        white-space: nowrap;
+        padding: 0;
+        &:first-child{
+          display: none;
+        }
+        &:last-child{
+          padding: 0;
+        }
+        .p-button{
+          &.p-button-icon-only{
+            background: transparent;
+            border: 0;
+            color: var(--text-default);
+            // position: absolute;
+            // top: 0;
+            // right: 0;
+          }
+        }
+      }
+      .p-fileupload-filename{
+        width: 100%;
+        white-space: normal;
+        padding: 10px;
+      }
+    }
+  }
+  .uploadFileSec{
+    border: 2px dashed var(--border-default);
+    display: flex;
+    height: 100%;
+    min-height: 350px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+.w-30rem{
+  width: 30rem !important;
+}
+
+.panelOveride{
+  &.p-sidebar {
+    .p-sidebar-header{
+      border-bottom: 1px solid var(--border-default);
+      font-weight: 500;
+      font-size: 1.2em;
+    }
+    .p-sidebar-content{
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .p-sidebar-footer{
+      border-top: 1px solid var(--border-default);
+    }
+  }
+}
+
+.p-button{
+  background: var(--app-theme);
+  border-color: 1px solid var(--app-theme);
+  &:enabled:hover{
+    background: var(--app-theme);
+    border-color: 1px solid var(--app-theme);
+  }
+  &:focus{
+    box-shadow: none;
+  }
+}
+.chatSessions{
+  .p-inputtext{
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+.chatFormSp{
+  position: relative;
+  .p-inputtext{
+    width: 100%;
+    border-radius: 50px;
+    height: 4rem;
+    padding-right: 4rem;
+  }
+  .p-button{
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    border-radius: 100%;
+    height: 3rem;
+
+  }
+}

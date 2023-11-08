@@ -1,0 +1,116 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* @import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css"; */
+
+h2{
+    font-family: var(--family-work-sans);
+    font-size: 3.5em;
+    text-align:center;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: var(--weight-600);
+  }
+  h3{
+    font-family: var(--family-work-sans);
+    font-size: 2.8em;
+    margin: 0;
+  }
+  h4{
+    font-size:1.5em;
+    font-family: var(--family-work-sans);
+    margin: 0;
+  }
+  .btn{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap:0.875rem;
+    padding: 0.5rem 1rem;
+    justify-content:center;
+    &.btn-primary{
+      background: var(--app-theme);
+      border-color: var(--app-theme);
+      &:hover{
+        
+      background: var(--app-theme);
+      border-color: var(--app-theme);
+      }
+    }
+    &.btn-primary-white{
+      background: var(--app-theme);
+      border-color: var(--app-theme);
+      color:#fff;
+      &:hover{
+        
+      background: #fff;
+      border-color: #fff;
+      color: #261B45;
+      svg{
+        path{
+          fill:  #261B45;
+        }
+      }
+      }
+    }
+    &.btn-white{
+      background: #fff;
+      border-color: #fff;
+      svg{
+        path{
+          fill:  #261B45;
+        }
+      }
+      &:hover{
+        
+      background: #F6005A;
+      border-color: #F6005A;
+      svg{
+        path{
+          fill:  #fff;
+        }
+      }
+      }
+    }
+    &.btn-secondary{
+      background: var(--app-theme-secondary);
+      border-color: var(--app-theme-secondary);
+      &:hover{
+      background: var(--app-theme-secondary);
+      border-color: var(--app-theme-secondary);
+      }
+    }
+    &.btn-play{
+      border-radius:100%;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      width:80px;
+      height:80px;
+    }
+    &.btn-download{
+      span{
+        display:flex;
+        flex-direction:column;
+        align-items: flex-start;
+      }
+    }
+    &.btn-round-corner{
+      border-radius:25px;
+    }
+    &.btn-lg{
+      padding: 0.875rem 1.5rem;
+      font-size:16px;
+    }
+  }
+  .btnHolder{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .container.container-sm{
+    @media (min-width: 1200px){
+      max-width: 1000px;
+    }
+  }

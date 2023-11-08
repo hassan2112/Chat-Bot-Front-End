@@ -1,77 +1,197 @@
-<!-- <div class="container">
-    <div class="header">
-        <h1>Chatbot Application</h1>
-    </div>
-    <div class="upload-section">
-        <p-fileUpload name="files" url="http://127.0.0.1:5000/api/upload" (onUpload)="onUpload($event)" [multiple]="true" accept="application/pdf">
-            <ng-template pTemplate="content">
-                <ul *ngIf="uploadedFiles.length">
-                    <li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size }} bytes</li>
-                </ul>
-            </ng-template>
-        </p-fileUpload>
-    </div>
-    <div *ngIf="uploadedFiles.length" class="input-container">
-        <textarea pInputTextarea [(ngModel)]="question" placeholder="Type your question here..." rows="5" cols="30"></textarea>
-        <button pButton label="Ask" (click)="askQuestion()" class="ask-button"></button>
-    </div>
-    <div *ngIf="answer" class="output-container">
-        <p-card header="Response" class="response-card">
-            <p>{{ answer }}</p>
-        </p-card>
-    </div>
-</div> -->
-<div class="container">
-  <div class="topBar">
-    <h1>Document Listing</h1>
-    <p-button  (click)="sidebarVisible = true" label="Add Files"></p-button>
-  </div>
-</div>
-<div class="homeContainer">
-  <div class="container">
-    <div class="homeSec">
-      <div class="docListing">
-        <p-table [value]="product">
-          <ng-template pTemplate="header">
-            <tr>
-              <th>Code</th>
-              <th>Name</th>
-              <th>Category</th>
-              <th>Quantity</th>
-            </tr>
-          </ng-template>
-          <ng-template pTemplate="body" let-product>
-            <tr>
-              <td>{{ product.code }}</td>
-              <td>{{ product.name }}</td>
-              <td>{{ product.category }}</td>
-              <td>{{ product.quantity }}</td>
-            </tr>
-          </ng-template>
-        </p-table>
+<div class="bannerContainer">
+  <div class="captionSec">
+    <div class="container">
+      <div class="captionHolder">
+      <div class="captionContent">
+        <h2>It's not just reading anymore, it's a <span class="text-green">conversation</span></h2>
+        <p>Say hello to documents that respond to you! With AskYourPDF, your reading isn't just simple, it's fun!</p>
+        <div class="btnHolder">
+          <a href="javascript:void(0);" class="btn btn-primary btn-lg btn-download">
+            <svg width="28px" height="28px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+              <rect fill="none" height="256" width="256" />
+              <polyline fill="none" points="86 82 128 40 170 82" stroke="#fff" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="16" />
+              <line fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="128"
+                x2="128" y1="152" y2="40" />
+              <path d="M216,152v56a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V152" fill="none" stroke="#fff" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="16" /></svg>
+            <span>
+              Upload Documents
+            </span>
+          </a>
+        </div>
+      </div>
+        <div class="captionImageSec">
+          <div class="bannerShape"><img src="../../assets/images/shape-x.svg" alt=""></div>
+          <img src="../../assets/images/banner-image.svg" alt="image">
+        </div>
       </div>
     </div>
   </div>
 </div>
-<p-sidebar [(visible)]="sidebarVisible"  position="right" styleClass="w-30rem panelOveride" [dismissible]="false">
-  <ng-template pTemplate="header">Add Files</ng-template>
-  <ng-template pTemplate="content">
-  <div class="fileUploadSec">
-    <p-fileUpload name="files" url="http://127.0.0.1:5000/api/upload" (onUpload)="onUpload($event)"
-      [multiple]="true" accept="application/pdf" (onSelect)="onSelect()" (onClear)="onClear()" (onRemove)="onRemove()">
-      <ng-template pTemplate="content">
-        <ul *ngIf="uploadedFiles.length">
-          <li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size }} bytes</li>
-        </ul>
-        <div class="uploadFileSec" *ngIf="uploading">
-          <svg enable-background="new 0 0 50 50" height="50px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><path d="  M32,35c0,0,8.312,0,9.098,0C45.463,35,49,31.463,49,27.099s-3.537-7.902-7.902-7.902c-0.02,0-0.038,0.003-0.058,0.003  c0.061-0.494,0.103-0.994,0.103-1.504c0-6.71-5.439-12.15-12.15-12.15c-5.229,0-9.672,3.309-11.386,7.941  c-1.087-1.089-2.591-1.764-4.251-1.764c-3.319,0-6.009,2.69-6.009,6.008c0,0.085,0.01,0.167,0.013,0.251  C3.695,18.995,1,22.344,1,26.331C1,31.119,4.881,35,9.67,35c0.827,0,8.33,0,8.33,0" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><polyline fill="none" points="20,28 25,23 30,28   " stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><line fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" x1="25" x2="25" y1="43" y2="23.333"/></svg>
-          <p>Drag and Drop File Here</p>
-        </div>
-      </ng-template>
-    </p-fileUpload>
+
+<div class="appContentContainer">
+  <div class="container container-sm">
+    <div class="contentSec">
+      <h3 class="mb-4">Lorem Ipsum</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. </p>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. </p>
+    </div>
   </div>
-  </ng-template>
- <ng-template pTemplate="footer">
-  <p-button  (click)="sidebarVisible = false" label="Close"></p-button>
- </ng-template>
-</p-sidebar>
+  <img class="industry-shape" src="../../assets/images/industry-shape.svg" alt="img">
+</div>
+<div class="appTabContainer">
+  
+  <img class="shape-right" src="../../assets/images/industry-x.svg" alt="img">
+  <div class="container">
+    <div class="appTabSec">
+      <div class="appTabNav">
+        <h3>The feeling’s always mutual</h3>
+        <ul class="nav nav-tabs flex-column" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="tab-1" data-bs-toggle="tab" data-bs-target="#tab-1-pane" type="button"
+              role="tab" aria-controls="tab-1-pane" aria-selected="true">Download App</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-2" data-bs-toggle="tab" data-bs-target="#tab-2-pane" type="button"
+              role="tab" aria-controls="tab-2-pane" aria-selected="false">Recieve & Transfer Tip</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-3" data-bs-toggle="tab" data-bs-target="#tab-3-pane" type="button"
+              role="tab" aria-controls="tab-3-pane" aria-selected="false">Transaction History</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-4" data-bs-toggle="tab" data-bs-target="#tab-4-pane" type="button"
+              role="tab" aria-controls="tab-4-pane" aria-selected="false">Cashless Tip</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-5" data-bs-toggle="tab" data-bs-target="#tab-5-pane" type="button"
+              role="tab" aria-controls="tab-5-pane" aria-selected="false">Rate Your Experience</button>
+          </li>
+        </ul>
+      </div>
+      <div class="appTabContentHolder">
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="tab-1-pane" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
+            <div class="appTabContentSec">
+              <div class="downloadAppHolder">
+                <div class="downloadAppImgSec">
+                  <img src="assets/img/app.png" alt="app">
+                </div>
+                <div class="downloadAppContent">
+                  <h4>Transfer Tip</h4>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tab-2-pane" role="tabpanel" aria-labelledby="tab-2" tabindex="0">
+            <div class="appTabContentSec">
+              <div class="downloadAppHolder">
+                <div class="downloadAppImgSec">
+                  <img src="assets/img/app.png" alt="app">
+                </div>
+                <div class="downloadAppContent">
+                  <h4>Transfer Tip</h4>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tab-3-pane" role="tabpanel" aria-labelledby="tab-3" tabindex="0">
+            <div class="appTabContentSec">
+              <div class="downloadAppHolder">
+                <div class="downloadAppImgSec">
+                  <img src="assets/img/app.png" alt="app">
+                </div>
+                <div class="downloadAppContent">
+                  <h4>Transfer Tip</h4>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tab-4-pane" role="tabpanel" aria-labelledby="tab-4" tabindex="0">
+            <div class="appTabContentSec">
+              <div class="downloadAppHolder">
+                <div class="downloadAppImgSec">
+                  <img src="assets/img/app.png" alt="app">
+                </div>
+                <div class="downloadAppContent">
+                  <h4>Transfer Tip</h4>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tab-5-pane" role="tabpanel" aria-labelledby="tab-5" tabindex="0">
+            <div class="appTabContentSec">
+              <div class="downloadAppHolder">
+                <div class="downloadAppImgSec">
+                  <img src="assets/img/app.png" alt="app">
+                </div>
+                <div class="downloadAppContent">
+                  <h4>Transfer Tip</h4>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="contactHolder">
+  <div class="container">
+    <div class="contactSec">
+      <div class="contactContentSec">
+        <a class="mb-5 d-inline-block" href="javascript:void(0);"><img src="assets/images/logo-white.svg"
+            alt="logo"></a>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+        <p class="mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+        <div class="btnHolder">
+          <a href="javascript:void(0);" class="btn btn-secondary btn-download">
+            <svg width="28px" height="28px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+              <rect fill="none" height="256" width="256" />
+              <polyline fill="none" points="86 82 128 40 170 82" stroke="#fff" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="16" />
+              <line fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="128"
+                x2="128" y1="152" y2="40" />
+              <path d="M216,152v56a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V152" fill="none" stroke="#fff" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="16" /></svg>
+            <span>
+              Upload Documents
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="contactForm">
+        <form action="">
+          <div class="form-group mb-4">
+            <input class="form-control" placeholder="Name">
+          </div>
+          <div class="form-group mb-4">
+            <input class="form-control" placeholder="Email">
+          </div>
+          <div class="form-group mb-4">
+            <textarea class="form-control" placeholder="Message"></textarea>
+          </div>
+          <div class="form-group mb-4">
+            <input type="submit" class="ms-auto me-auto btn btn-secondary btn-lg" value="Send">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

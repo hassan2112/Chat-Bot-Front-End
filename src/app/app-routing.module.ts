@@ -9,6 +9,10 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
+    path: 'listing', // Remove the leading slash
+    component: ChatComponent,
+  },
+  {
     path: 'chat', // Remove the leading slash
     component: ChatComponent,
   },
@@ -22,5 +26,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { 
+export class AppRoutingModule {
 }

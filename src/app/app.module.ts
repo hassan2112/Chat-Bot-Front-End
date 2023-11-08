@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { ListingComponent } from './listing/listing.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { FormsModule } from '@angular/forms';
@@ -19,10 +20,11 @@ import { ChatComponent } from './chat/chat.component';
 import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
+    ListingComponent,
     FooterComponent,
       ChatComponent
    ],

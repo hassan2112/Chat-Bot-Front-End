@@ -251,3 +251,11 @@ body{
 
   }
 }
+
+.text-green{
+  color: var(--app-theme) !important;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button{
+  border-radius: var(--bs-btn-border-radius);
+}
